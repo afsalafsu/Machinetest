@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../model/user_model.dart';
+import 'package:mtestsocialmedia/main.dart';
 
 List<Userdetails> prlist = [
   Userdetails(
@@ -59,8 +60,12 @@ List<Userdetails> prlist = [
 ];
 
 class Notification_list extends StatelessWidget {
-  const Notification_list({Key? key}) : super(key: key);
-
+   Notification_list({Key? key} ) : super(key: key);
+    String ttl="Notification";
+    setstate()
+    {
+      Homescreen().titlee=ttl;
+    }
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

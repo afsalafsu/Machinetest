@@ -53,51 +53,80 @@ with SingleTickerProviderStateMixin {
       ),
       
 
-      bottomNavigationBar: SizedBox(
-        //height: 10.0,
-        child: Container(
-          color: Color(0xfF2EBE9),
-          width: MediaQuery.of(context).size.width,
-          child: Row(
-            //crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(22.0),
-                child: InkWell(
-                  onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return chatdata();
-              },
-            ),
-          ),        
-                  child: Icon(Icons.message, color: Colors.grey),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(22.0),
-                child: Icon(Icons.group, color: Colors.grey),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(22.0),
-                child: Icon(Icons.home, color: Colors.grey),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(22.0),
-                child: Icon(Icons.notifications_none, color: Colors.grey),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(22.0),
-                child: Icon(
-                  Icons.account_circle_sharp,
-                  color: Colors.grey,
-                ),
-              )
-            ],
+      bottomNavigationBar: 
+      BottomNavigationBar(items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message,color: Colors.blue),
+            label: 'message',
+            //backgroundColor: Colors.red,
           ),
-        ),
-      ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.group,color: Colors.grey),
+            label: 'Business',
+            //backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home,color: Colors.grey),
+            label: 'Business',
+            //backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications,color: Colors.grey),
+            label: 'Business',
+            //backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_sharp,color: Colors.grey,),
+            label: 'Business',
+            //backgroundColor: Colors.green,
+          ), 
+      ]
+          )
+
+        //height: 10.0,
+        //  Container(
+        //   //color: Color(0xfF2EBE9),
+        //   width: MediaQuery.of(context).size.width,
+        //   child: Row(
+        //     //crossAxisAlignment: CrossAxisAlignment.end,
+        //     children: [
+        //       Padding(
+        //         padding: const EdgeInsets.all(22.0),
+        //         child: InkWell(
+        //           onTap: () => Navigator.push(
+        //     context,
+        //     MaterialPageRoute(
+        //       builder: (context) {
+        //         return chatdata();
+        //       },
+        //     ),
+        //   ),        
+        //           child: Icon(Icons.message, color: Colors.blue),
+        //         ),
+        //       ),
+        //       Padding(
+        //         padding: const EdgeInsets.all(22.0),
+        //         child: Icon(Icons.group, color: Colors.grey),
+        //       ),
+        //       Padding(
+        //         padding: const EdgeInsets.all(22.0),
+        //         child: Icon(Icons.home, color: Colors.grey),
+        //       ),
+        //       Padding(
+        //         padding: const EdgeInsets.all(22.0),
+        //         child: Icon(Icons.notifications_none, color: Colors.grey),
+        //       ),
+        //       Padding(
+        //         padding: const EdgeInsets.all(22.0),
+        //         child: Icon(
+        //           Icons.account_circle_sharp,
+        //           color: Colors.grey,
+        //         ),
+        //       )
+        //     ],
+        //   ),
+        // ),
+      
     );
   }
 }

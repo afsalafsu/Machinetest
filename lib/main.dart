@@ -10,7 +10,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
+//String titlee="";
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -20,14 +20,14 @@ class MyApp extends StatelessWidget {
       // theme: ThemeData(
       //   primarySwatch: Colors.blue,
       // ),
-      home: const Homescreen(),
+      home:  Homescreen(),
     );
   }
 }
 
 class Homescreen extends StatefulWidget {
-  const Homescreen({Key? key}) : super(key: key);
-
+   Homescreen({Key? key}) : super(key: key);
+String titlee="";
   @override
   State<Homescreen> createState() => _HomescreenState();
 }
@@ -35,6 +35,7 @@ class Homescreen extends StatefulWidget {
 class _HomescreenState extends State<Homescreen>
     with SingleTickerProviderStateMixin {
   late TabController tbcontrol;
+  
   @override
   void initState() {
     // TODO: implement initState
@@ -47,7 +48,7 @@ class _HomescreenState extends State<Homescreen>
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey,
-        title: Text("Feeds"),
+        title: Text(widget.titlee),
         actions: [
           PopupMenuButton(
             itemBuilder: (popup) {
@@ -83,7 +84,8 @@ class _HomescreenState extends State<Homescreen>
               child: TabBarView(
                 controller: tbcontrol,
                 children: [
-                  Notification_list(),
+                  
+                 Notification_list(),
                   Feed_page(),
                 ],
               ),
