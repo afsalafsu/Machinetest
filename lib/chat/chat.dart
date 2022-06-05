@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -24,7 +26,7 @@ with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey,
+        backgroundColor: Color.fromARGB(255, 228, 228, 228),
         title: TextField(
           decoration: InputDecoration(
             //labelText:"search",
@@ -37,8 +39,8 @@ with SingleTickerProviderStateMixin {
 
       ],
       bottom: TabBar(tabs: [
-        Text("Chat"),
-        Text("Group")
+        Text("Chat",style: TextStyle(color: Colors.black),),
+        Text("Group",style: TextStyle(color: Colors.black),)
       ],
       controller: ctabcontrol,
       ),
@@ -53,35 +55,35 @@ with SingleTickerProviderStateMixin {
       ),
       
 
-      bottomNavigationBar: 
-      BottomNavigationBar(items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.message,color: Colors.blue),
-            label: 'message',
-            //backgroundColor: Colors.red,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.group,color: Colors.grey),
-            label: 'Business',
-            //backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home,color: Colors.grey),
-            label: 'Business',
-            //backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications,color: Colors.grey),
-            label: 'Business',
-            //backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_sharp,color: Colors.grey,),
-            label: 'Business',
-            //backgroundColor: Colors.green,
-          ), 
-      ]
-          )
+      // bottomNavigationBar: 
+      // BottomNavigationBar(items: const <BottomNavigationBarItem>[
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.message,color: Colors.blue),
+      //       label: 'message',
+      //       //backgroundColor: Colors.red,
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.group,color: Colors.grey),
+      //       label: 'Business',
+      //       //backgroundColor: Colors.green,
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home,color: Colors.grey),
+      //       label: 'Business',
+      //       //backgroundColor: Colors.green,
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.notifications,color: Colors.grey),
+      //       label: 'Business',
+      //       //backgroundColor: Colors.green,
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.account_circle_sharp,color: Colors.grey,),
+      //       label: 'Business',
+      //       //backgroundColor: Colors.green,
+      //     ), 
+      // ]
+      //     )
 
         //height: 10.0,
         //  Container(

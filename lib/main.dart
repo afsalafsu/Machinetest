@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mtestsocialmedia/chat/chat.dart';
+import 'package:mtestsocialmedia/chat/chattile.dart';
 import 'package:mtestsocialmedia/feed/feed.dart';
 
 import 'notification/notification.dart';
@@ -40,41 +41,41 @@ class _HomescreenState extends State<Homescreen>
   void initState() {
     // TODO: implement initState
     super.initState();
-    tbcontrol = TabController(length: 2, initialIndex: 1, vsync: this);
+    tbcontrol = TabController(length: 3, initialIndex: 0, vsync: this);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.grey,
-        title: Text(widget.titlee),
-        actions: [
-          PopupMenuButton(
-            itemBuilder: (popup) {
-              return [
-                PopupMenuItem(
-                  child: Text("New Group"),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) {
-                          return Notification_list();
-                        },
-                      ),
-                    );
-                  },
-                ),
-                PopupMenuItem(child: Text("Feeds")),
-                PopupMenuItem(child: Text("Notification")),
-                PopupMenuItem(child: Text("Settings"))
-              ];
-            },
-            icon: Icon(Icons.filter_list),
-          )
-        ],
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.grey,
+      //   title: Text(widget.titlee),
+      //   actions: [
+      //     PopupMenuButton(
+      //       itemBuilder: (popup) {
+      //         return [
+      //           PopupMenuItem(
+      //             child: Text("New Group"),
+      //             onTap: () {
+      //               Navigator.push(
+      //                 context,
+      //                 MaterialPageRoute(
+      //                   builder: (_) {
+      //                     return Notification_list();
+      //                   },
+      //                 ),
+      //               );
+      //             },
+      //           ),
+      //           PopupMenuItem(child: Text("Feeds")),
+      //           PopupMenuItem(child: Text("Notification")),
+      //           PopupMenuItem(child: Text("Settings"))
+      //         ];
+      //       },
+      //       icon: Icon(Icons.filter_list),
+      //     )
+      //   ],
+      // ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -87,6 +88,7 @@ class _HomescreenState extends State<Homescreen>
                   
                  Notification_list(),
                   Feed_page(),
+                  chatdata(),
                 ],
               ),
             ),
@@ -94,51 +96,35 @@ class _HomescreenState extends State<Homescreen>
         ),
       ),
       //Notification_list() ,
-      bottomNavigationBar: SizedBox(
-        //height: 10.0,
-        child: Container(
-          color: Color(0xfF2EBE9),
-          width: MediaQuery.of(context).size.width,
-          child: Row(
-            //crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(22.0),
-                child: InkWell(
-                  onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return chatdata();
-              },
-            ),
-          ),        
-                  child: Icon(Icons.message, color: Colors.grey),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(22.0),
-                child: Icon(Icons.group, color: Colors.grey),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(22.0),
-                child: Icon(Icons.home, color: Colors.grey),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(22.0),
-                child: Icon(Icons.notifications_none, color: Colors.grey),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(22.0),
-                child: Icon(
-                  Icons.account_circle_sharp,
-                  color: Colors.grey,
-                ),
-              )
-            ],
+      bottomNavigationBar: 
+      BottomNavigationBar(items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message,color: Colors.blue),
+            label: 'message',
+            //backgroundColor: Colors.red,
           ),
-        ),
-      ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.group,color: Colors.grey),
+            label: 'Business',
+            //backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home,color: Colors.grey),
+            label: 'Business',
+            //backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications,color: Colors.grey),
+            label: 'Business',
+            //backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_sharp,color: Colors.grey,),
+            label: 'Business',
+            //backgroundColor: Colors.green,
+          ), 
+      ]
+          )
     );
   }
 }

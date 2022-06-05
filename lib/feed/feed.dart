@@ -65,7 +65,12 @@ class Feed_page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return Scaffold(
+      appBar: AppBar(
+        actions: [Icon(Icons.filter_list)],
+        title: Text("Feeds"),
+      ),    
+    body: ListView.builder(
       itemBuilder: (context, index) {
         return Column(
           children: [
@@ -99,6 +104,7 @@ class Feed_page extends StatelessWidget {
         );
       },
       itemCount: prlist.length,
+    ),
     );
   }
 }
